@@ -68,18 +68,19 @@ def mitocondrialEve():
 #indicates an ancestor
     probabilityListBeforeSettledLife = [0,0,0,1,1,1,2,2,3]
 #probability set of having girl child, before settled life
-#for instance probability of having one girl is 3/9 3is nuber of 1s
+#for instance probability of having one girl is 3/9 3 is number of 1s
 #9 is number of whole set
     probabilityListAfterSettledLife = [0,0,1,1,2,2,2,3,3]
 #probability set of having girl child, after settled life
 #works as the same way with the upper set
+#if you did not like the probabilities you can change that lists as you wish
     for x in range(genTimeToSettlement(e,b)):
         #print(genTimeToSettlement(e,b))#trying purposes
         newList = []
         for f in initialList:
             for g in range(random.choice(probabilityListBeforeSettledLife)):
-                newList.append(f) #adds children to the list just
-#expressing their ancestor number
+                newList.append(f) #adds children to the list with
+#expressing their ancestor number, for example all descendants of 1 expressed with 1
                 #print(newList)#trying purposes
             #print(newList)#trying purposes
         initialList = newList
@@ -113,14 +114,14 @@ def mitocondrialEve():
     print(len(differenceList))
     return len(differenceList)
 
-#bu kodu denemedin dikkatli ol
+
 def simulationNum(a):
     """
     takes one input a
     a is an integer
     runs a times the mitocondrialEve function
     and returns most likely miteve number
-    and ist likelihood as a tuple
+    and its likelihood as a tuple
     """
     ansList = []
     for num in range(a):
@@ -134,19 +135,17 @@ def simulationNum(a):
                 count = count+1
         if count > initialTuple[1]:
             initialTuple = (num1, count)
+    #if there is two or more option has the same likelihood returns the first one
     miteveNum = initialTuple[0]
     likelihood = initialTuple[1]/len(ansList)
     ansTuple =(miteveNum, likelihood)
     return ansTuple
 
-#buralara da hangi sayıdan kaç tane olduğunu gösteren grafikli bir şeyler
-    #plot eden kod ekle
-        
-        
-        
-    
-        
-    
 
-#when you want to start the function decomment the below line
-#mitocondrialEve()
+        
+        
+        
+   
+#when you want to start the function decomment the below line and add a number in the parantheses that indicates how many times you
+#want the simulation be runned  
+#simulationNum()
