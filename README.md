@@ -7,4 +7,4 @@ Based on the two user input, function generates most likely miteve number. One i
 
 While Getting Started, click simply the mit-eve-simulator.py file
 
-I hope this code may help better understand miteve concept  
+I hope this code may help to better understand mitocondrial Eve concept  
